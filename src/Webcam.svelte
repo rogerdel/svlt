@@ -6,6 +6,10 @@
     const getCameraVideo = async ()=>{
         try{
             loading = true;
+            var video = document.querySelector("video");    
+            video.setAttribute("playsinline", true);
+            video.setAttribute("autoplay", true);
+
             const stream = await navigator.mediaDevices.getUserMedia({video: true})
             videoSource.srcObject = stream;
             videoSource.play();
