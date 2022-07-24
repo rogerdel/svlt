@@ -6,7 +6,7 @@
     const getCameraVideo = async ()=>{
         try{
             loading = true;
-            const stream = await navigator.mediaDevices.getUserMedia({video: { facingMode: { exact: "environment" } }})
+            const stream = await navigator.mediaDevices.getUserMedia({video: true})
             videoSource.srcObject = stream;
             videoSource.play();
             loading = false;
@@ -25,7 +25,7 @@
     {/if}
     {devices}
     <!-- svelte-ignore a11y-media-has-caption -->
-    <video playsinline="" bind:this={videoSource}></video>
+    <video playsinline="" autoplay="" bind:this={videoSource}></video>
     <button on:click={getCameraVideo}>Click</button>
     {err}
 </div>
