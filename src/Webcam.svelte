@@ -6,7 +6,7 @@
     const getCameraVideo = async ()=>{
         try{
             loading = true;
-            const stream = await navigator.mediaDevices.getUserMedia({video: true})
+            const stream = await navigator.mediaDevices.getUserMedia({video: { facingMode: { exact: "environment" } }})
             videoSource.srcObject = stream;
             videoSource.play();
             loading = false;
