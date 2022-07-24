@@ -10,7 +10,6 @@
             videoSource.srcObject = stream;
             videoSource.play();
             loading = false;
-            
         }
         catch (error){
             console.log('error', error)
